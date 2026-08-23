@@ -1,4 +1,4 @@
-import Kepler.parser as parser
+import parser
 
 def handle_request_pipeline() -> None: # Handles PipeLine
     prompt = prompt_user()
@@ -48,10 +48,15 @@ def normalize_tokens(word) -> str: # Change Synonyms For Normalized Words
         {
         "token": "sa",
          "syn" : ["ca", "ça"]
-         },
+        },
         {
         "token": "aller",
-        "syn" : ["vas","va"]}
+        "syn" : ["vas","va"]    
+        },
+        {
+        "token": "bien",
+        "syn" : ["super", "tiguidou", "parfaitement"]
+        }
                             ]
 
     for token in synonyms:
@@ -65,4 +70,6 @@ def redirect_request(tokens):
             case "bonjour":
                 parser.bonjour(tokens)
                 break
+        print("Aucune action est associée à cette requête ! [" + token + "]")
+
 handle_request_pipeline()

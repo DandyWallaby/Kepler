@@ -1,12 +1,12 @@
-import Kepler.data_base as database
+import data_base as database
 import random
 
 def pick(variable:list):
     return random.choice(variable)
 
 def bonjour(request):
-    if request["modifiers"]["type_de_language"] == "famillier":
-        salutation = pick(database.salutations_famillieres)
+    if request["modifiers"]["type_de_language"] == "familier":
+        salutation = pick(database.salutations_familieres)
     elif request["modifiers"]["type_de_language"] == "normal":
         salutation = pick(database.salutations_normales)
     elif request["modifiers"]["type_de_language"] == "serieux":

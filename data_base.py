@@ -1,4 +1,4 @@
 
 salutations_normales = ["Bonjour", "Salut", "Allo"]
-salutations_famillieres = ["Yo", "Sup", "Salut"]
+salutations_familieres = ["Yo", "Sup", "Salut", "Coucou"]
 salutations_serieuses = ["Bonjour", "Salutations"]
