@@ -9,7 +9,7 @@ import random
 
 # Modifiers -> Avec quel particularité l'exécuter : COMMENT
 
-# Reference
+# Reference -> Comment interpreter certains mots
 
 def bonjour(tokens):
     request = {
@@ -24,10 +24,10 @@ def bonjour(tokens):
     token_amount = 5
 
     for i in range(token_amount - len(tokens)):
-        tokens.append(None)
+        tokens.append("")
 
-    cleaned_tokens = tokens.remove('bonjour')
-    print(cleaned_tokens)
+    tokens.remove('bonjour') if 'bonjour' in tokens else None
+    cleaned_tokens = list(filter(None, tokens))
 
     match cleaned_tokens:
         case ["comment", "sa", "aller"]:
@@ -39,6 +39,8 @@ def bonjour(tokens):
         case ["kepler", "aller", "bien"]:
             request["parameters"]["demander_comment_sa_va"] = True
         case ["comment", "kepler", "aller"]:
+            request["parameters"]["demander_comment_sa_va"] = True
+        case ["comment", "aller", "kepler"]:
             request["parameters"]["demander_comment_sa_va"] = True
         
 
